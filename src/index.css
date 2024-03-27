@@ -1,0 +1,9 @@
+:root {
+    font-family: Roboto, sans-serif;
+    color: rgba(216, 211, 211, 0.87);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
