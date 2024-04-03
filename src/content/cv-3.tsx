@@ -7,7 +7,7 @@ const CV_3: React.FC = () => {
             <Center position="relative" paddingTop={"20px"}>
                 <Divider />
                 <Text fontWeight={"bold"} fontSize={"16px"}>
-                    biri biri
+                    biribiri
                 </Text>
                 <Divider />
             </Center>

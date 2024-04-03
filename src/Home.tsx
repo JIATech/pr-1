@@ -5,6 +5,9 @@ import CV_1 from "./content/cv-1";
 import CV_2 from "./content/cv-2";
 import CV_3 from "./content/cv-3";
 import Title from "./content/title";
+import Header from "./content/header";
+import Nav from "./content/nav";
+import Footer from "./content/footer";
 
 const Home = () => {
     return (
@@ -12,7 +15,7 @@ const Home = () => {
             <>
                 <ToggleDarkMode />
                 <Grid
-                    templateRows="20% 5% auto 20%" // Alto de header, title, contenido principal y footer
+                    templateRows="20% 6% auto 20%" // Alto de header, title, contenido principal y footer
                     templateColumns="20vh auto" // Ancho de nav y main
                     templateAreas={`"header header"
                   "nav title"
@@ -24,10 +27,10 @@ const Home = () => {
                     margin={{ base: "0", lg: "0 25vh" }}
                 >
                     <GridItem w="100%" h="100%" bg="orange.300" area="header">
-                        Header
+                        <Header title="Curriculum Vitae" subtitle="Web Developer" />
                     </GridItem>
                     <GridItem w="100%" h="100%" bg="pink.300" area="nav">
-                        Nav
+                        <Nav />
                     </GridItem>
                     <GridItem w="100%" h="100%" bg="purple.300" area="title">
                         <Title />
@@ -54,7 +57,7 @@ const Home = () => {
                         </GridItem>
                     </GridItem>
                     <GridItem w="100%" h="100%" bg="blue.300" area="footer">
-                        Footer
+                        <Footer />
                     </GridItem>
                 </Grid>
             </>

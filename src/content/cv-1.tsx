@@ -64,7 +64,7 @@ const CV_1: React.FC = () => {
                 </ListItem>
                 <ListItem>
                     |<ListIcon as={ChevronRightIcon} />
-                    <span style={{ fontStyle: "italic" }}>Express</span>
+                    <span style={{ fontStyle: "italic" }}>Express.js</span>
                 </ListItem>
                 <ListItem>
                     |<ListIcon as={ChevronRightIcon} />

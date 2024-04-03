@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# micro frontends
+micro-frontend-svelte
+micro-frontend-vue
+micro-frontend-spa
+micro-frontend-html-css

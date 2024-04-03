@@ -2,6 +2,7 @@ import React from "react";
 import { Text, Stack, Divider, Center } from "@chakra-ui/react";
 import { ListItem, ListIcon, List } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import TimeSince from "./refreshDate";
 
 const CV_2: React.FC = () => {
     return (
@@ -16,14 +17,14 @@ const CV_2: React.FC = () => {
             <Text fontSize={"14px"}>
                 <span style={{ fontWeight: "bold" }}>
                     Ministerio de Justicia, Argentina
-                </span>{" "}
+                </span><br />
                 Servicio Penitenciario Bonaerense
                 <br />
                 Dirección de Tecnología Informática
                 <br />
-                Desarrollador Back-end
+                <strong>Puesto:</strong><br />Desarrollador especializado en Back-end
                 <br />
-                <span style={{ fontSize: "12px" }}>(2023 - Actualidad)</span>
+                <TimeSince startDate={new Date(2023, 10, 27)} />
             </Text>
             <Center
                 position="relative"
