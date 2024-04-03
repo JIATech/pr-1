@@ -1,32 +1,34 @@
 import React from 'react';
 import { Box } from '@chakra-ui/react';
+import { Link as ReactRouterLink } from 'react-router-dom'
+import { Link as ChakraLink } from '@chakra-ui/react'
 
 const Nav: React.FC = () => {
     return (
-        <nav>
+        <nav style={{ padding: "5px" }}>
             <Box>
-                <a href="#home">Home</a>
+                <ChakraLink as={ReactRouterLink} to="/">Home</ChakraLink>
             </Box>
             <Box>
-                <a href="/about">About</a>
+                <ChakraLink as={ReactRouterLink} to="/about">About</ChakraLink>
             </Box>
             <Box>
-                <a href="#projects">Projects</a>
+                <ChakraLink as={ReactRouterLink} to="/contact">Contact</ChakraLink>
             </Box>
             <Box>
-                <a href="#contact">Contact</a>
+                <ChakraLink as={ReactRouterLink} to="/cv">CV</ChakraLink>
             </Box>
             <Box>
-                <a href="/spa">SPA Example</a>
+                <ChakraLink as={ReactRouterLink} to="/spa">SPA Example</ChakraLink>
             </Box>
             <Box>
-                <a href="/svelte">Svelte Example</a>
+                <ChakraLink as={ReactRouterLink} to="/svelte">Svelte Example</ChakraLink>
             </Box>
             <Box>
-                <a href="/vue">Vue Example</a>
+                <ChakraLink as={ReactRouterLink} to="/vue">Vue Example</ChakraLink>
             </Box>
             <Box>
-                <a href="/htmlcss">HTML&CSS Example</a>
+                <ChakraLink as={ReactRouterLink} to="/htmlcss">HTML/CSS Example</ChakraLink>
             </Box>
         </nav>
     );

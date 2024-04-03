@@ -7,7 +7,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
     return (
-        <header>
+        <header style={{ padding: "5px" }}>
             <h1>{title}</h1>
             <h2>{subtitle}</h2>
         </header>

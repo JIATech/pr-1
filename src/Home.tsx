@@ -1,4 +1,3 @@
-// import "./Home.css";
 import ToggleDarkMode from "./Toggle";
 import { Grid, GridItem, SlideFade } from "@chakra-ui/react";
 import CV_1 from "./content/cv-1";
@@ -26,19 +25,21 @@ const Home = () => {
                     h="100vh"
                     margin={{ base: "0", lg: "0 25vh" }}
                 >
-                    <GridItem w="100%" h="100%" bg="orange.300" area="header">
+                    <GridItem w="100%" h="100%" area="header" border={"2px"} borderColor={{default: 'black', _dark: 'white'}}>
                         <Header title="Curriculum Vitae" subtitle="Web Developer" />
                     </GridItem>
-                    <GridItem w="100%" h="100%" bg="pink.300" area="nav">
+                    <GridItem w="100%" h="100%" area="nav" border={"2px"} borderColor={{default: 'black', _dark: 'white'}} borderRight={"none"} borderTop={"none"}>
                         <Nav />
                     </GridItem>
-                    <GridItem w="100%" h="100%" bg="purple.300" area="title">
+                    <GridItem w="100%" h="100%" area="title" border={"2px"} borderColor={{default: 'black', _dark: 'white'}} borderTop={"none"}>
                         <Title />
                     </GridItem>
                     <GridItem
                         w="100%"
                         h="100%"
-                        bg="green.300"
+                        border={"2px"} 
+                        borderColor={{default: 'black', _dark: 'white'}}
+                        borderTop={"none"}
                         area="main"
                         overflowY={"auto"}
                     >
@@ -56,7 +57,7 @@ const Home = () => {
                             </Grid>
                         </GridItem>
                     </GridItem>
-                    <GridItem w="100%" h="100%" bg="blue.300" area="footer">
+                    <GridItem w="100%" h="100%" area="footer" border={"2px"} borderColor={{default: 'black', _dark: 'white'}} borderTop={"none"}>
                         <Footer />
                     </GridItem>
                 </Grid>

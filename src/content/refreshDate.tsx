@@ -31,15 +31,15 @@ const TimeSince: React.FC<TimeSinceProps> = ({ startDate }) => {
     if (years === 0) {
         if (months === 0) {
             return <Text style={
-                { fontStyle: "italic", fontWeight: "bold" }
+                { fontStyle: "italic" }
             }>{days} días</Text>;
         }
         return <Text style={
-                { fontStyle: "italic", fontWeight: "bold" }
+                { fontStyle: "italic" }
             }>{months} meses, {days} días</Text>;
     } else {
         return <Text style={
-                { fontStyle: "italic", fontWeight: "bold" }
+                { fontStyle: "italic" }
             }>{years} años, {months} meses, {days} días</Text>;
     }
 }
