@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Text } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { differenceInYears, differenceInMonths, differenceInDays, addYears, addMonths } from "date-fns";
 
 interface TimeSinceProps {
@@ -30,17 +30,23 @@ const TimeSince: React.FC<TimeSinceProps> = ({ startDate }) => {
 
     if (years === 0) {
         if (months === 0) {
-            return <Text style={
+            return <Box as="span" style={
                 { fontStyle: "italic" }
-            }>{days} días</Text>;
+            }>{days} días</Box>;
         }
-        return <Text style={
-                { fontStyle: "italic" }
-            }>{months} meses, {days} días</Text>;
+        return (
+            <Box as="span" style={
+                { fontStyle: "italic" }}>
+                {months} meses, {days} días
+            </Box>
+        );
     } else {
-        return <Text style={
-                { fontStyle: "italic" }
-            }>{years} años, {months} meses, {days} días</Text>;
+        return (
+            <Box as="span" style={
+                { fontStyle: "italic" }}>
+                {years} años, {months} meses, {days} días
+            </Box>
+        );
     }
 }
 

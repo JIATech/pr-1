@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box, useColorMode } from '@chakra-ui/react';
 
 interface HeaderProps {
     title: string;
@@ -6,11 +7,18 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
+    const { colorMode } = useColorMode();
     return (
-        <header style={{ padding: "5px" }}>
+        <Box
+            as="header"
+            p={4}
+            color={colorMode === "dark" ? "white" : "white"}
+            textAlign={{ base: "left", lg: "center" }}
+            userSelect={"none"}
+        >
             <h1>{title}</h1>
             <h2>{subtitle}</h2>
-        </header>
+        </Box>
     );
 };
 

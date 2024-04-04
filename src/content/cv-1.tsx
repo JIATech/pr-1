@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Stack, Divider, Center } from "@chakra-ui/react";
+import { Text, Stack, Divider, Center, Box } from "@chakra-ui/react";
 import { ListItem, ListIcon, List } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import TimeSince from "./refreshDate";
@@ -9,53 +9,67 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  useColorMode,
 } from '@chakra-ui/react'
 
 const CV_1: React.FC = () => {
+    const { colorMode } = useColorMode();
     return (
         <Accordion allowMultiple>
-            <Stack paddingLeft={"5px"} spacing={2}>
+            <Stack paddingLeft={"5px"} spacing={1} color={colorMode === "dark" ? "white" : "white"}>
                 <Center position="relative" paddingTop={"20px"}>
-                    <Divider borderBottom={"1px"} />
-                    <Text fontWeight={"bold"}>
-                        Datos
-                    </Text>
-                    <Divider borderBottom={"1px"} />
+                    <Divider borderWidth="1px" my="4" />
+                    <Text fontWeight={"bold"}>Datos</Text>
+                    <Divider borderWidth="1px" my="4" />
                 </Center>
                 <AccordionItem border={"none"}>
-                    <AccordionButton paddingLeft={"0px"} paddingTop={"0px"} paddingBottom={"0px"}>
+                    <AccordionButton
+                        paddingLeft={"0px"}
+                        paddingTop={"0px"}
+                        paddingBottom={"0px"}
+                    >
                         <Text flex={1} textAlign={"left"} fontSize={"14px"}>
-                            <strong>Fecha de Nac.:</strong>‎ 25.12.1991<AccordionIcon />
+                             <Box as="span" fontWeight="bold">Fecha de Nac.:</Box>‎ 25.12.1991
                         </Text>
+                        <AccordionIcon />
                     </AccordionButton>
-                    <AccordionPanel paddingLeft={"0px"} paddingTop={"0px"} paddingBottom={"0px"}>
-                        <Text fontSize={"14px"}><strong>Edad:</strong><TimeSince startDate={new Date(1991, 12, 25)} />
+                    <AccordionPanel
+                        paddingLeft={"0px"}
+                        paddingTop={"0px"}
+                        paddingBottom={"0px"}
+                    >
+                        <Text fontSize={"14px"}>
+                             <Box as="span" fontWeight="bold">Edad:</Box>
+                        </Text>
+                        <Text fontSize={"14px"}>
+                            <TimeSince startDate={new Date(1991, 12, 25)} />
                         </Text>
                     </AccordionPanel>
                 </AccordionItem>
                 <Text fontSize={"14px"}>
-                    <span style={{ fontWeight: "bold" }}>Nacionalidad:</span>{" "}
+                    <Box as="span" fontWeight="bold">Nacionalidad:</Box>{" "}
                     Argentina
                 </Text>
                 <Text fontSize={"14px"}>
-                    <span style={{ fontWeight: "bold" }}>Cel.:</span> +54 9 221 690
-                    8850
+                    <Box as="span" fontWeight="bold">Cel.:</Box> +54 9 221
+                    690 8850
                 </Text>
                 <Text fontSize={"14px"}>
-                    <span style={{ fontWeight: "bold" }}>E-mail:</span>{" "}
+                    <Box as="span" fontWeight="bold">E-mail:</Box>{" "}
                     arnaboldi.juan@gmail.com
                 </Text>
                 <Text fontSize={"14px"}>
-                    <span style={{ fontWeight: "bold" }}>Dirección:</span> B1906CHZ
+                    <Box as="span" fontWeight="bold">Dirección:</Box>{" "}
+                    B1906CHZ
                     <br />
-                    Tolosa, La Plata, Buenos Aires
+                    La Plata, Buenos Aires
                 </Text>
                 <Center position="relative" paddingTop={"20px"}>
-                    <Divider borderBottom={"1px"} />
+                    <Divider borderWidth="1px" my="4" />
                     <Text fontWeight={"bold"} fontSize={"16px"}>
                         Formación
                     </Text>
-                    <Divider borderBottom={"1px"} />
+                    <Divider borderWidth="1px" my="4" />
                 </Center>
                 <Text fontSize={"14px"}>
                     2021 - Actualidad <br />
@@ -63,77 +77,77 @@ const CV_1: React.FC = () => {
                     Licenciatura en Informática (en curso)
                 </Text>
                 <Center position="relative" paddingTop={"20px"}>
-                    <Divider borderBottom={"1px"} />
+                    <Divider borderWidth="1px" my="4" />
                     <Text fontWeight={"bold"} fontSize={"16px"} align="center">
                         Habilidades Técnicas Principales
                     </Text>
-                    <Divider borderBottom={"1px"} />
+                    <Divider borderWidth="1px" my="4" />
                 </Center>
                 <List fontSize={"14px"}>
                     <ListItem>
                         |<ListIcon as={ChevronRightIcon} />
-                        <span style={{ fontStyle: "italic" }}>JavaScript</span>
+                        <Box as="span" fontStyle="italic">JavaScript</Box>
                     </ListItem>
                     <ListItem>
                         |<ListIcon as={ChevronRightIcon} />
-                        <span style={{ fontStyle: "italic" }}>Node.js</span>
+                        <Box as="span" fontStyle="italic">Node.js</Box>
                     </ListItem>
                     <ListItem>
                         |<ListIcon as={ChevronRightIcon} />
-                        <span style={{ fontStyle: "italic" }}>Express.js</span>
+                        <Box as="span" fontStyle="italic">Express.js</Box>
                     </ListItem>
                     <ListItem>
                         |<ListIcon as={ChevronRightIcon} />
-                        <span style={{ fontStyle: "italic" }}>PostgreSQL</span>
+                        <Box as="span" fontStyle="italic">PostgreSQL</Box>
                     </ListItem>
                     <ListItem>
                         |<ListIcon as={ChevronRightIcon} />
-                        <span style={{ fontStyle: "italic" }}>MySQL</span>
+                        <Box as="span" fontStyle="italic">MySQL</Box>
                     </ListItem>
                     <ListItem>
                         |<ListIcon as={ChevronRightIcon} />
-                        <span style={{ fontStyle: "italic" }}>Git</span>
+                        <Box as="span" fontStyle="italic">Git</Box>
                     </ListItem>
                     <ListItem>
                         |<ListIcon as={ChevronRightIcon} />
-                        <span style={{ fontStyle: "italic" }}>Github</span>
+                        <Box as="span" fontStyle="italic">Github</Box>
                     </ListItem>
                     <ListItem>
                         |<ListIcon as={ChevronRightIcon} />
-                        <span style={{ fontStyle: "italic" }}>Docker</span>
+                        <Box as="span" fontStyle="italic">Docker</Box>
                     </ListItem>
                 </List>
-                            <Center position="relative" paddingTop={"20px"}>
-                    <Divider borderBottom={"1px"} />
+                <Center position="relative" paddingTop={"20px"}>
+                    <Divider borderWidth="1px" my="4" />
                     <Text fontWeight={"bold"} fontSize={"16px"} align="center">
                         Conocimientos Moderados
                     </Text>
-                    <Divider borderBottom={"1px"} />
+                    <Divider borderWidth="1px" my="4" />
                 </Center>
                 <List fontSize={"14px"}>
                     <ListItem>
                         |<ListIcon as={ChevronRightIcon} />
-                        <span style={{ fontStyle: "italic" }}>HTML+CSS</span>
+                        <Box as="span" fontStyle="italic">HTML+CSS</Box>
                     </ListItem>
                     <ListItem>
                         |<ListIcon as={ChevronRightIcon} />
-                        <span style={{ fontStyle: "italic" }}>React</span>
+                        <Box as="span" fontStyle="italic">React</Box>
                     </ListItem>
                     <ListItem>
                         |<ListIcon as={ChevronRightIcon} />
-                        <span style={{ fontStyle: "italic" }}>Python</span>
+                        <Box as="span" fontStyle="italic">Python</Box>
                     </ListItem>
                     <ListItem>
                         |<ListIcon as={ChevronRightIcon} />
-                        <span style={{ fontStyle: "italic" }}>PHP</span>
+                        <Box as="span" fontStyle="italic">PHP</Box>
                     </ListItem>
                     <ListItem>
                         |<ListIcon as={ChevronRightIcon} />
-                        <span style={{ fontStyle: "italic" }}>Vue</span>
+                        <Box as="span" fontStyle="italic">Vue</Box>
                     </ListItem>
                     <ListItem>
                         |<ListIcon as={ChevronRightIcon} />
-                        <span style={{ fontStyle: "italic" }}>MongoDB</span>
+                        <Box as="span" fontStyle="italic">MongoDB</Box>
                     </ListItem>
                 </List>
             </Stack>

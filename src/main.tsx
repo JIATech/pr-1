@@ -32,9 +32,33 @@ const theme = extendTheme({
         global: {
             "html, body": {
                 transitionProperty:
-                    "background-color, border-color, color, fill, stroke",
+                    "backgroundColor, borderColor, color, fill, stroke",
                 transitionDuration: "2s",
                 transitionTimingFunction: "ease-out",
+            },
+        },
+    },
+    components: {
+        Avatar: {
+            sizes: {
+                md: {
+                    w: "48px",
+                    h: "48px",
+                    fontSize: "24px",
+                },
+                "2xl": {
+                    w: "300px",
+                    h: "300px",
+                    fontSize: "48px",
+                },
+            },
+        },
+        ModalBody: {
+            sizes: {
+                "2xl": {
+                    w: "300px",
+                    h: "300px",
+                },
             },
         },
     },

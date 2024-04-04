@@ -19,7 +19,8 @@ export default function ToggleDarkMode() {
 
     return (
         <Button
-            onClick={handleClick}
+            title="Toggle dark mode"
+            onPointerDown={handleClick}
             position="absolute"
             top={2}
             right={2}
@@ -27,6 +28,7 @@ export default function ToggleDarkMode() {
                 opacity: opacity,
                 transition: "opacity 100ms ease-in-out",
             }}
+            zIndex="tooltip"
         >
             {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
         </Button>
