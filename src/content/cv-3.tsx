@@ -1,5 +1,6 @@
 import React from "react";
-import { Text, Stack, Divider, Center, useColorMode } from "@chakra-ui/react";
+import { Text, Stack, Divider, Center, useColorMode, List, ListItem, ListIcon, Box } from "@chakra-ui/react";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 
 const CV_3: React.FC = () => {
     const { colorMode } = useColorMode();
@@ -9,41 +10,108 @@ const CV_3: React.FC = () => {
             spacing={2}
             color={colorMode === "dark" ? "white" : "white"}
         >
-            <Center position="relative" paddingTop={"20px"}>
-                <Divider borderWidth="1px" my="4" />
-                <Text fontWeight={"bold"} fontSize={"16px"}>
-                    biribiri
+            <Divider borderWidth="1px" w={"99%"} mt={"20px"} />
+            <Center position="relative" paddingTop={"0px"}>
+                <Text fontWeight={"bold"} fontSize={"16px"} align="center">
+                    Habilidades Técnicas Principales
                 </Text>
-                <Divider borderWidth="1px" my="4" />
             </Center>
-            <Text fontSize={"14px"}>
-                <span style={{ fontWeight: "bold" }}>biri biri:</span> biri biri
-            </Text>
-            <Text fontSize={"14px"}>
-                <span style={{ fontWeight: "bold" }}>biri biri:</span> biri biri
-            </Text>
-            <Text fontSize={"14px"}>
-                <span style={{ fontWeight: "bold" }}>biribiri.:</span> biri biri
-            </Text>
-            <Text fontSize={"14px"}>
-                <span style={{ fontWeight: "bold" }}>biri biri:</span> biri biri
-            </Text>
-            <Text fontSize={"14px"}>
-                <span style={{ fontWeight: "bold" }}>biri biri:</span> biri
-                <br />
-                biri
-            </Text>
-            <Center position="relative" paddingTop={"20px"} paddingLeft={"0px"}>
-                <Divider borderWidth="1px" my="4" />
-                <Text fontWeight={"bold"} fontSize={"16px"}>
-                    Biri biri
+            <Divider borderWidth="1px" w={"99%"} />
+            <List fontSize={"14px"}>
+                <ListItem>
+                    <ListIcon as={ChevronRightIcon} />
+                    <Box as="span" fontStyle="italic">
+                        JavaScript
+                    </Box>
+                </ListItem>
+                <ListItem>
+                    <ListIcon as={ChevronRightIcon} />
+                    <Box as="span" fontStyle="italic">
+                        Node.js
+                    </Box>
+                </ListItem>
+                <ListItem>
+                    <ListIcon as={ChevronRightIcon} />
+                    <Box as="span" fontStyle="italic">
+                        Express.js
+                    </Box>
+                </ListItem>
+                <ListItem>
+                    <ListIcon as={ChevronRightIcon} />
+                    <Box as="span" fontStyle="italic">
+                        PostgreSQL
+                    </Box>
+                </ListItem>
+                <ListItem>
+                    <ListIcon as={ChevronRightIcon} />
+                    <Box as="span" fontStyle="italic">
+                        MySQL
+                    </Box>
+                </ListItem>
+                <ListItem>
+                    <ListIcon as={ChevronRightIcon} />
+                    <Box as="span" fontStyle="italic">
+                        Git
+                    </Box>
+                </ListItem>
+                <ListItem>
+                    <ListIcon as={ChevronRightIcon} />
+                    <Box as="span" fontStyle="italic">
+                        Github
+                    </Box>
+                </ListItem>
+                <ListItem>
+                    <ListIcon as={ChevronRightIcon} />
+                    <Box as="span" fontStyle="italic">
+                        Docker
+                    </Box>
+                </ListItem>
+            </List>
+            <Divider borderWidth="1px" w={"99%"} />
+            <Center position="relative" paddingTop={"0px"}>
+                <Text fontWeight={"bold"} fontSize={"16px"} align="center">
+                    Conocimientos Moderados
                 </Text>
-                <Divider borderWidth="1px" my="4" />
             </Center>
-            <Text fontSize={"14px"}>biri biri</Text>
-            <Text fontSize={"14px"}>biri biri</Text>
-            <Text fontSize={"14px"}>biri biri</Text>
-            <Text fontSize={"14px"}>biri biri</Text>
+            <Divider borderWidth="1px" w={"99%"} />
+            <List fontSize={"14px"}>
+                <ListItem>
+                    <ListIcon as={ChevronRightIcon} />
+                    <Box as="span" fontStyle="italic">
+                        HTML+CSS
+                    </Box>
+                </ListItem>
+                <ListItem>
+                    <ListIcon as={ChevronRightIcon} />
+                    <Box as="span" fontStyle="italic">
+                        React
+                    </Box>
+                </ListItem>
+                <ListItem>
+                    <ListIcon as={ChevronRightIcon} />
+                    <Box as="span" fontStyle="italic">
+                        Python
+                    </Box>
+                </ListItem>
+                <ListItem>
+                    <ListIcon as={ChevronRightIcon} />
+                    <Box as="span" fontStyle="italic">
+                        PHP
+                    </Box>
+                </ListItem>
+                <ListItem>
+                    <ListIcon as={ChevronRightIcon} />
+                    <Box as="span" fontStyle="italic">
+                        Vue
+                    </Box>
+                </ListItem>
+                <ListItem>
+                    <ListIcon as={ChevronRightIcon} />
+                    <Box as="span" fontStyle="italic">
+                        MongoDB
+                    </Box>
+                </ListItem>
+            </List>
         </Stack>
     );
 };

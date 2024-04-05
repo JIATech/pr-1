@@ -1,7 +1,5 @@
 import React from "react";
 import { Text, Stack, Divider, Center, Box } from "@chakra-ui/react";
-import { ListItem, ListIcon, List } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
 import TimeSince from "./refreshDate";
 import {
   Accordion,
@@ -19,7 +17,7 @@ const CV_1: React.FC = () => {
             <Stack paddingLeft={"5px"} spacing={1} color={colorMode === "dark" ? "white" : "white"}>
                 <Center position="relative" paddingTop={"20px"}>
                     <Divider borderWidth="1px" my="4" />
-                    <Text fontWeight={"bold"}>Datos</Text>
+                    <Text fontWeight={"bold"} fontSize={"16px"}>Datos</Text>
                     <Divider borderWidth="1px" my="4" />
                 </Center>
                 <AccordionItem border={"none"}>
@@ -59,9 +57,7 @@ const CV_1: React.FC = () => {
                     arnaboldi.juan@gmail.com
                 </Text>
                 <Text fontSize={"14px"}>
-                    <Box as="span" fontWeight="bold">Dirección:</Box>{" "}
-                    B1906CHZ
-                    <br />
+                    <Box as="span" fontWeight="bold">Ubicación:</Box>{" "}
                     La Plata, Buenos Aires
                 </Text>
                 <Center position="relative" paddingTop={"20px"}>
@@ -76,80 +72,6 @@ const CV_1: React.FC = () => {
                     UES21, sede La Plata <br />
                     Licenciatura en Informática (en curso)
                 </Text>
-                <Center position="relative" paddingTop={"20px"}>
-                    <Divider borderWidth="1px" my="4" />
-                    <Text fontWeight={"bold"} fontSize={"16px"} align="center">
-                        Habilidades Técnicas Principales
-                    </Text>
-                    <Divider borderWidth="1px" my="4" />
-                </Center>
-                <List fontSize={"14px"}>
-                    <ListItem>
-                        |<ListIcon as={ChevronRightIcon} />
-                        <Box as="span" fontStyle="italic">JavaScript</Box>
-                    </ListItem>
-                    <ListItem>
-                        |<ListIcon as={ChevronRightIcon} />
-                        <Box as="span" fontStyle="italic">Node.js</Box>
-                    </ListItem>
-                    <ListItem>
-                        |<ListIcon as={ChevronRightIcon} />
-                        <Box as="span" fontStyle="italic">Express.js</Box>
-                    </ListItem>
-                    <ListItem>
-                        |<ListIcon as={ChevronRightIcon} />
-                        <Box as="span" fontStyle="italic">PostgreSQL</Box>
-                    </ListItem>
-                    <ListItem>
-                        |<ListIcon as={ChevronRightIcon} />
-                        <Box as="span" fontStyle="italic">MySQL</Box>
-                    </ListItem>
-                    <ListItem>
-                        |<ListIcon as={ChevronRightIcon} />
-                        <Box as="span" fontStyle="italic">Git</Box>
-                    </ListItem>
-                    <ListItem>
-                        |<ListIcon as={ChevronRightIcon} />
-                        <Box as="span" fontStyle="italic">Github</Box>
-                    </ListItem>
-                    <ListItem>
-                        |<ListIcon as={ChevronRightIcon} />
-                        <Box as="span" fontStyle="italic">Docker</Box>
-                    </ListItem>
-                </List>
-                <Center position="relative" paddingTop={"20px"}>
-                    <Divider borderWidth="1px" my="4" />
-                    <Text fontWeight={"bold"} fontSize={"16px"} align="center">
-                        Conocimientos Moderados
-                    </Text>
-                    <Divider borderWidth="1px" my="4" />
-                </Center>
-                <List fontSize={"14px"}>
-                    <ListItem>
-                        |<ListIcon as={ChevronRightIcon} />
-                        <Box as="span" fontStyle="italic">HTML+CSS</Box>
-                    </ListItem>
-                    <ListItem>
-                        |<ListIcon as={ChevronRightIcon} />
-                        <Box as="span" fontStyle="italic">React</Box>
-                    </ListItem>
-                    <ListItem>
-                        |<ListIcon as={ChevronRightIcon} />
-                        <Box as="span" fontStyle="italic">Python</Box>
-                    </ListItem>
-                    <ListItem>
-                        |<ListIcon as={ChevronRightIcon} />
-                        <Box as="span" fontStyle="italic">PHP</Box>
-                    </ListItem>
-                    <ListItem>
-                        |<ListIcon as={ChevronRightIcon} />
-                        <Box as="span" fontStyle="italic">Vue</Box>
-                    </ListItem>
-                    <ListItem>
-                        |<ListIcon as={ChevronRightIcon} />
-                        <Box as="span" fontStyle="italic">MongoDB</Box>
-                    </ListItem>
-                </List>
             </Stack>
         </Accordion>
     );

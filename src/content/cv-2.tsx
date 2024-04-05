@@ -1,8 +1,15 @@
 import React from "react";
 import { Text, Stack, Divider, Center, Box, useColorMode } from "@chakra-ui/react";
-import { ListItem, ListIcon, List } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
 import TimeSince from "./refreshDate";
+import {
+    Accordion,
+    AccordionItem,
+    AccordionButton,
+    AccordionPanel,
+    AccordionIcon,
+} from "@chakra-ui/react";
+import { Link as ReactRouterLink } from "react-router-dom";
+import { Link as ChakraLink } from "@chakra-ui/react";
 
 const CV_2: React.FC = () => {
     const { colorMode } = useColorMode();
@@ -41,36 +48,51 @@ const CV_2: React.FC = () => {
             </Text>
             <Center position="relative" paddingTop={"20px"} paddingLeft={"0px"}>
                 <Divider borderWidth="1px" my="4" />
-                <Text fontWeight={"bold"} fontSize={"16px"}>
+                <ChakraLink
+                    as={ReactRouterLink}
+                    fontWeight="bold"
+                    to={"/projects"}
+                >
                     Proyectos
-                </Text>
+                </ChakraLink>
                 <Divider borderWidth="1px" my="4" />
             </Center>
-            <Text fontSize={"14px"}>Proyecto1</Text>
-            <Text fontSize={"14px"}>....</Text>
-            <Text fontSize={"14px"}>Proyecto2</Text>
-            <Text fontSize={"14px"}>....</Text>
-            <Center position="relative" paddingTop={"20px"} paddingLeft={"0px"}>
-                <Divider borderWidth="1px" my="4" />
-                <Text fontWeight={"bold"} fontSize={"16px"} align={"center"}>
-                    Proyectos Personales
-                </Text>
-                <Divider borderWidth="1px" my="4" />
-            </Center>
-            <List fontSize={"14px"}>
-                <ListItem>
-                    <ListIcon as={ChevronRightIcon} />
-                    Proyecto1
-                </ListItem>
-                <ListItem>
-                    <ListIcon as={ChevronRightIcon} />
-                    Proyecto2
-                </ListItem>
-                <ListItem>
-                    <ListIcon as={ChevronRightIcon} />
-                    Proyecto3
-                </ListItem>
-            </List>
+            <Accordion allowMultiple defaultIndex={[0]}>
+                <AccordionItem border={"none"}>
+                    <AccordionButton
+                        paddingLeft={"0px"}
+                        paddingTop={"0px"}
+                        paddingBottom={"0px"}
+                    >
+                        <Text flex={1} textAlign={"left"} fontSize={"14px"}>
+                            <Text as="span" fontWeight="bold">Lista de proyectos</Text>
+                        </Text>
+                        <AccordionIcon />
+                    </AccordionButton>
+                    <AccordionPanel fontSize={"14px"}>
+                        <Box>
+                            <ChakraLink as={ReactRouterLink} to="/htmlcss">
+                                Proyecto HTML/CSS
+                            </ChakraLink>
+                        </Box>
+                        <Box>
+                            <ChakraLink as={ReactRouterLink} to="/spa">
+                                Proyecto SPA
+                            </ChakraLink>
+                        </Box>
+                        <Box>
+                            <ChakraLink as={ReactRouterLink} to="/svelte">
+                                Proyecto Svelte
+                            </ChakraLink>
+                        </Box>
+                        <Box>
+                            <ChakraLink as={ReactRouterLink} to="/vue">
+                                Proyecto Vue
+                            </ChakraLink>
+                        </Box>
+                    </AccordionPanel>
+                </AccordionItem>
+            </Accordion>
         </Stack>
     );
 };

@@ -4,14 +4,17 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Home from "./Home.tsx";
 import "./index.css";
-import { About, MicrofrontendSPA, MicrofrontendSvelte, MicrofrontendVue, HtmlCssExample } from "./routes/root.tsx";
+import { MicrofrontendSPA, MicrofrontendSvelte, MicrofrontendVue, HtmlCssExample } from "./routes/root.tsx";
+import ProjectsContent from "./content/projects.tsx";
+import Main from "./content/mainContent.tsx";
 
 const router = createBrowserRouter([{ 
     path: "/", 
-    element: <Home />
-}, {
-    path: "/about",
-    element: <About />
+    element: <Home />,
+    children: [
+        { path: "/", element: <Main /> },
+        { path: "/projects", element: <ProjectsContent /> },
+    ]
 }, {
     path: "/spa",
     element: <MicrofrontendSPA />
@@ -27,7 +30,17 @@ const router = createBrowserRouter([{
 }
 ]);
 
+export default router;
+
 const theme = extendTheme({
+    breakpoints: {
+        sm: "30em",
+        md: "48em",
+        lg: "62em",
+        xl: "80em",
+        "2xl": "96em",
+        custom1: "120em",
+    },
     styles: {
         global: {
             "html, body": {

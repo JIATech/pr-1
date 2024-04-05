@@ -1,24 +1,24 @@
-import ToggleDarkMode from "./Toggle";
 import { Grid, GridItem, SlideFade, useColorMode, Box } from "@chakra-ui/react";
-import CV_1 from "./content/cv-1";
-import CV_2 from "./content/cv-2";
-import CV_3 from "./content/cv-3";
 import Title from "./content/title";
 import Header from "./content/header";
 import Nav from "./content/nav";
 import Footer from "./content/footer";
 import VideoBackground from "./content/backgroundComponent";
+import { useOutlet } from "react-router-dom";
 
 const Home = () => {
     const { colorMode } = useColorMode();
+    const outlet = useOutlet();
     return (
         <SlideFade in={true} delay={0.5}>
             <>
                 <VideoBackground>
-                    <ToggleDarkMode />
                     <Box overflowX="auto">
                         <Grid
-                            templateRows="20% 6% auto 20%" // Alto de header, title, contenido principal y footer
+                            templateRows={{
+                                base: "12% 6%",
+                                lg: "20% 6% auto 20%",
+                            }} // Alto de header, title, contenido principal y footer
                             templateColumns="20vh auto" // Ancho de nav y main
                             templateAreas={`"header header"
                             "nav title"
@@ -40,30 +40,25 @@ const Home = () => {
                                 h="100%"
                                 area="header"
                                 border={"2px"}
-                                borderColor={{
-                                    default: "black",
-                                    chakraUiDark: "white",
-                                }}
+                                borderColor={
+                                    colorMode === "dark" ? "white" : "black"
+                                }
                                 backgroundColor={
                                     colorMode === "dark"
                                         ? "rgba(0,0,0,0)"
                                         : "rgba(0,0,0,0.7)"
                                 }
                             >
-                                <Header
-                                    title="Curriculum Vitae"
-                                    subtitle="Web Developer"
-                                />
+                                <Header />
                             </GridItem>
                             <GridItem
                                 w="100%"
                                 h="100%"
                                 area="nav"
                                 border={"2px"}
-                                borderColor={{
-                                    default: "black",
-                                    chakraUiDark: "white",
-                                }}
+                                borderColor={
+                                    colorMode === "dark" ? "white" : "black"
+                                }
                                 borderRight={"none"}
                                 borderTop={"none"}
                                 backgroundColor={
@@ -80,6 +75,7 @@ const Home = () => {
                                 area="title"
                                 border={"2px"}
                                 borderTop={"none"}
+                                borderBottom={"none"}
                                 backgroundColor={
                                     colorMode === "dark"
                                         ? "rgba(0,0,0,0)"
@@ -92,51 +88,29 @@ const Home = () => {
                             <GridItem
                                 w="100%"
                                 h="100%"
-                                border={"2px"}
-                                borderTop={"none"}
                                 area="main"
                                 overflowY={"auto"}
+                                borderTop={"none"}
+                                border={"2px"}
+                                borderColor={
+                                    colorMode === "dark" ? "white" : "black"
+                                }
+                                backgroundColor={
+                                    colorMode === "dark"
+                                        ? "rgba(0,0,0,0)"
+                                        : "rgba(0,0,0,0.7)"
+                                }
                             >
-                                <GridItem>
-                                    <Grid
-                                        templateColumns="repeat(3, 1fr)"
-                                        gap={4}
-                                        backgroundColor={
-                                            colorMode === "dark"
-                                                ? "rgba(0,0,0,0)"
-                                                : "rgba(0,0,0,0.7)"
-                                        }
-                                        color={
-                                            colorMode === "dark"
-                                                ? "black"
-                                                : "white"
-                                        }
-                                        borderLeftColor={{
-                                            default: "white",
-                                            chakraUiDark: "black",
-                                        }}
-                                    >
-                                        <GridItem>
-                                            <CV_1 />
-                                        </GridItem>
-                                        <GridItem>
-                                            <CV_2 />
-                                        </GridItem>
-                                        <GridItem>
-                                            <CV_3 />
-                                        </GridItem>
-                                    </Grid>
-                                </GridItem>
+                                {outlet}
                             </GridItem>
                             <GridItem
                                 w="100%"
                                 h="100%"
                                 area="footer"
                                 border={"2px"}
-                                borderColor={{
-                                    default: "black",
-                                    chakraUiDark: "white",
-                                }}
+                                borderColor={
+                                    colorMode === "dark" ? "white" : "black"
+                                }
                                 borderTop={"none"}
                                 backgroundColor={
                                     colorMode === "dark"
