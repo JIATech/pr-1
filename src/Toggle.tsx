@@ -22,7 +22,7 @@ export default function ToggleDarkMode() {
             title="Toggle dark mode"
             onPointerDown={handleClick}
             position="absolute"
-            top={16}
+            top={2}
             right={2}
             style={{
                 opacity: opacity,

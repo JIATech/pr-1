@@ -8,6 +8,7 @@ import {
     useDisclosure,
 } from "@chakra-ui/react";
 import SelfWritingText from "./selfWritingText";
+import Login from "./login";
 
 const Title: React.FC = () => {
     const { colorMode } = useColorMode();
@@ -60,7 +61,7 @@ const Title: React.FC = () => {
                 </Box>
                 <Box
                     ml={4}
-                    mt={{ base: 4, md: 4, lg: 4, xl: 4 }}
+                    mt={{ base: 1, md: 1, lg: 1, xl: 1 }}
                     fontSize={{ base: "md", md: "md", lg: "md", xl: "xl" }}
                     fontFamily={"monospace"}
                 >
@@ -70,6 +71,7 @@ const Title: React.FC = () => {
                         cursor={false}
                     />
                 </Box>
+                <Login />
             </Flex>
         </>
     );

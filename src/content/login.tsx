@@ -86,8 +86,13 @@ const Login: React.FC = () => {
             <Button
                 onClick={handleOpen}
                 position="absolute"
-                top={2}
+                top={16}
+                mt={14}
                 right={2}
+                size={'md'}
+                backgroundColor="rgba(0,0,0,0)"
+                color={'white'}
+                _hover={{ backgroundColor: 'rgba(0,0,0,0)' }}
             >
                 Login
             </Button>

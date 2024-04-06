@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./selfWritingText.css";
+import { Box } from "@chakra-ui/react";
 
 interface SelfWritingTextProps {
     phrases: string[];
@@ -43,10 +44,10 @@ const SelfWritingText: React.FC<SelfWritingTextProps> = ({ phrases, erase, curso
 
     if (cursor) {
         return (
-            <div className="self-writing-text">
+            <Box className="self-writing-text">
                 {text}
                 <span className="cursor" />
-            </div>
+            </Box>
         );
     } else {
         return <div className="self-writing-text">{text}</div>;
